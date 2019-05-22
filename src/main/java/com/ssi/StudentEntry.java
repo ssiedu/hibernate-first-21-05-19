@@ -20,9 +20,12 @@ public class StudentEntry {
 		Student s5=new Student(115,"EEE","CS",3);
 		Student s6=new Student(116,"FFF","IT",2);
 		
-		Configuration conf=new Configuration().configure();
-		SessionFactory sessionFactory=	conf.buildSessionFactory();
-		Session session=sessionFactory.openSession();	
+		//Configuration conf=new Configuration().configure();
+		//Configuration conf=new Configuration().configure("myconfig.xml");
+		//SessionFactory sessionFactory=	conf.buildSessionFactory();
+		//Session session=sessionFactory.openSession();	
+		
+		Session session=DataUtility.getSF().openSession();
 		
 		Transaction tr=session.beginTransaction();
 		
@@ -33,6 +36,7 @@ public class StudentEntry {
 		session.save(s4);
 		session.save(s5);
 		session.save(s6);
+		
 		tr.commit();
 		
 		session.close();
