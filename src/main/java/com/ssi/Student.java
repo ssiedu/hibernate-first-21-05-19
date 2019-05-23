@@ -47,6 +47,11 @@ public class Student {
 	public void setSem(int sem) {
 		this.sem = sem;
 	}
+	@Override
+	public String toString() {
+		return "Student [rno=" + rno + ", name=" + name + ", branch=" + branch
+				+ ", sem=" + sem + "]";
+	}
 	
 	
 }
