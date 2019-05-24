@@ -1,17 +1,29 @@
 package com.ssi;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
+@Table(name="stud")
 public class Student {
 	
 	@Id
+	@Column(name="rollno")
 	private int rno;
+	
+	@Column(name="sname",nullable=false,length=50)
 	private String name;
+	
+	
 	private String branch;
+	
 	private int sem;
+
+	private static String university="DAVV";
 	
 	public Student() {
 		super();
