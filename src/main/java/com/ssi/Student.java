@@ -15,7 +15,7 @@ public class Student {
 	@Column(name="rollno")
 	private int rno;
 	
-	@Column(name="sname",nullable=false,length=50)
+	@Column(name="sname",nullable=true,length=50)
 	private String name;
 	
 	

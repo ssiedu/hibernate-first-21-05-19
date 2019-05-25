@@ -10,7 +10,10 @@ public class HQLDemo {
 	public static void main(String[] args) {
 
 		Session session=DataUtility.getSF().openSession();
-		Query query=session.createQuery("from Student");
+		Query query=session.createQuery("from Student where branch=:brname");
+		
+		query.setParameter("brname", "CIVIL");
+		
 		List<Student> students=query.list();
 		
 		for(Student student:students){
